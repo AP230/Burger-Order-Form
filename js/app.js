@@ -60,7 +60,7 @@ const app = new Vue({
       return this.shippingRates[this.shippingMethod] || 0;
     },
     discount() {
-      return this.appliedCoupon === 'FLOWER23' ? this.subtotal * 0.15 : 0;
+      return this.appliedCoupon === 'FLOWER23' ? this.subtotal * 0.10 : 0;
     },
     totalPrice() {
       return this.subtotal - this.discount + this.shippingCost;
@@ -81,7 +81,7 @@ const app = new Vue({
       const code = this.couponCode.trim().toUpperCase();
       if (code === 'FLOWER23') {
         this.appliedCoupon = code;
-        this.couponMessage = 'Coupon applied! 15% off';
+        this.couponMessage = 'Coupon applied! 10% off';
       } else {
         this.appliedCoupon = null;
         this.couponMessage = 'Invalid coupon code';
